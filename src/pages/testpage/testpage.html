@@ -13,7 +13,26 @@
   <h3>Welcome to your first Ionic app!</h3>
 
   <p>
-    TestPage
+    TestPageだぞ
   </p>
  
+  <form #form="ngForm" (ngSubmit)="btnTapped(form)" novalidate>
+  <ion-list>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" name="name" required [(ngModel)]="name" ngControl="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Keyword</ion-label>
+      <ion-input type="text" name="keyword" required [(ngModel)]="keyword" ngControl="keyword"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button type="submit" [disabled]="!form.valid" block>Save</button>
+  </div>
+  </form>
+    
 </ion-content>
